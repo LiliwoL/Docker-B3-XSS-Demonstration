@@ -1,13 +1,21 @@
-# Les failles XSS
+/**
+  _                 __       _ _ _            __  ______ ____  
+ | |    ___  ___   / _| __ _(_) | | ___  ___  \ \/ / ___/ ___| 
+ | |   / _ \/ __| | |_ / _` | | | |/ _ \/ __|  \  /\___ \___ \ 
+ | |__|  __/\__ \ |  _| (_| | | | |  __/\__ \  /  \ ___) |__) |
+ |_____\___||___/ |_|  \__,_|_|_|_|\___||___/ /_/\_\____/____/ 
+                                                               
+*/
 
 # La faille
 
 La faille XSS, de son nom complet Cross-Site Scripting, est une faille qui permet d'injecter du code HTML et/ou Javascript dans des variables ou bases de données mal protégées.
-Que le XSS soit permanent (stocké en base de données) ou non, son fonctionnement sera le même.
-Il consiste à injecter du code dans une variable ou base de données afin de faire en sorte que le site se connecte à un site distant (Cross-site) contenant un code malveillant.
-Le site distant pourra donc, par exemple, accéder aux cookies stockés sur le site d'origine, la requête provenant de ce site.
 
-Un exemple sera plus parlant qu'un long discours.
+Que le XSS soit permanent (stocké en base de données) ou non, son fonctionnement sera le même.
+
+Il consiste à injecter du code dans une variable ou base de données afin de faire en sorte que le site se connecte à un site distant (Cross-site) contenant un code malveillant.
+
+Le site distant pourra donc, par exemple, accéder aux cookies stockés sur le site d'origine, la requête provenant de ce site.
 
 Imaginons un pirate qui identifie qu'un site inscrit des informations personnelles dans un cookie comme ceci
 
@@ -18,6 +26,7 @@ setcookie("nom_du_cookie", "données personnelles stockées", time()+3600);
 
 
 Le pirate recherchera donc un formulaire vulnérable sur le site.
+
 Si le formulaire est trouvé, il pourraît par exemple ressembler à ceci (formulaire simplifié)
 
 ```php
@@ -102,10 +111,10 @@ docker-compose up -d
 
 ## Vulnérable
 
-http://localhost/faille/index.php
-http://localhost/faille/attack.php
+http://localhost:808/faille/index.php
+http://localhost:808/faille/attack.php
 
 # Protection
 
-http://localhost/protection/index.php
-http://localhost/protection/attack.php
+http://localhost:808/protection/index.php
+http://localhost:808/protection/attack.php
