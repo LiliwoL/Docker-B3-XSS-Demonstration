@@ -1,8 +1,8 @@
 <?php
-    // Le site stocke le cookie de cette manière
+    // Le site stocke le cookie suivant de cette manière
     //setcookie("information", "donnees perso contenues dans un cookie", time()+3600);
 
-    // La ligne ci-dessus est ici masquée pour ajouter du piment au jeu
+    // Mais pour s'amuser, on l'encode en base 64
     // https://www.base64decode.org/fr/
     eval(base64_decode("c2V0Y29va2llKCJpbmZvcm1hdGlvbiIsICJkb25uZWVzIHBlcnNvIGV0IHRyw6hzIHNlY3LDqHRlcy4gRkVORUxPTi0tLT4gb3VhaWNoIiwgdGltZSgpKzM2MDApOw=="));
 
@@ -13,7 +13,7 @@
         $prenom = $_GET['prenom'];
     }
 ?>
-
+    <h1>Veuillez saisir votre prénom:</h1>
     <form method="get">
         <input type="text" name="prenom">
         <button>Valider</button>
@@ -22,5 +22,5 @@
 <?php
     // On affiche la saisie du formulaire
     if(isset($prenom)){
-        echo $prenom;
+        echo "Bonjour, " . $prenom;
     }
